@@ -31,6 +31,7 @@ RUN \
 		python-is-python3 \
 		sqlite3 \
 		nodejs \
+    npm \
 		sudo \
 		tar \
 		tzdata \
