@@ -52,5 +52,10 @@ RUN \
 		/var/lib/apt/lists/* \
 		/var/tmp/*
 
+ENV NODE_ENV=production
+
+RUN \
+	npm install forever -g
+
 WORKDIR /chia-blockchain
 ENTRYPOINT ["bash", "./entrypoint.sh"]
