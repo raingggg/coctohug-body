@@ -30,8 +30,6 @@ RUN \
 		python3-pip \
 		python-is-python3 \
 		sqlite3 \
-		nodejs \
-    npm \
 		sudo \
 		tar \
 		tzdata \
@@ -44,11 +42,17 @@ RUN \
 		libgmp-dev \
 		libnuma-dev \
 		libsodium-dev \
-		g++ \
-	\
-# cleanup apt cache
-	\
-	&& rm -rf \
+		g++
+
+RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh \
+  && bash nodesource_setup.sh
+
+RUN \
+	apt-get update \
+	&& apt-get install -y \
+    nodejs
+
+RUN rm -rf \
 		/tmp/* \
 		/var/lib/apt/lists/* \
 		/var/tmp/*
