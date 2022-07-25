@@ -1,5 +1,5 @@
 # set ubuntu release version
-ARG UBUNTU_VER="hirsute"
+ARG UBUNTU_VER="jammy"
 
 ######## packages stage ###########
 FROM ubuntu:${UBUNTU_VER}
